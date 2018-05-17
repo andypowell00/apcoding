@@ -35,18 +35,16 @@ namespace apapi.Controllers
         }
 
         // POST api/Todo - creates a new Todo
-        //[HttpPost]
-        //public void Post([FromBody] TodoParam newTodo)
-        //{
-        //    _TodoRepository.AddTodo(new Todo
-        //    {
-        //        Id = newTodo.Id,
-        //        Body = newTodo.Body,
-        //        CreatedOn = DateTime.Now,
-        //        UpdatedOn = DateTime.Now,
-        //        UserId = newTodo.UserId
-        //    });
-        //}
+        [HttpPost]
+        public void Post([FromBody]Todo newTodo)
+        {
+            _TodoRepository.AddTodo(new Todo
+            {
+                title = newTodo.title,
+                complete = newTodo.complete,
+                description = newTodo.description
+            });
+        }
 
         // PUT api/Todo/5 - updates a specific Todo
         [HttpPut("{id}")]
