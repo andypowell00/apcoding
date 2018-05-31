@@ -9,5 +9,7 @@ namespace apapi
     {
         public string ConnectionString { get; set; }
         public string Database { get; set; }
+        public string TMBaseUrl { get; set; }
+        public string TMApiKey { get; set; }
     }
 }

@@ -26,7 +26,7 @@ namespace apapi.Controllers
             return await _TodoRepository.GetAllTodos();
         }
 
-        // GET api/Todo/5 - retrieves a specific Todo using either Id or InternalId (BSonId)
+        // GET api/Todo/5 - retrieves a specific Todo using InternalId (BSonId)
         [HttpGet("{id}")]
         public async Task<Todo> Get(string id)
         {

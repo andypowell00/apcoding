@@ -99,7 +99,7 @@ namespace apapi.Code
             await _context
             .Todos
             .ReplaceOneAsync(
-            filter: g => g.Id == todo.Id,
+            filter: g => g.InternalId == todo.InternalId,
             replacement: todo);
             return updateResult.IsAcknowledged
             && updateResult.ModifiedCount > 0;
@@ -112,7 +112,7 @@ namespace apapi.Code
             {
                 ReplaceOneResult actionResult
                     = await _context.Todos
-                                    .ReplaceOneAsync(n => n.Id.Equals(id)
+                                    .ReplaceOneAsync(n => n.InternalId.Equals(id)
                                             , item
                                             , new UpdateOptions { IsUpsert = true });
                 return actionResult.IsAcknowledged
