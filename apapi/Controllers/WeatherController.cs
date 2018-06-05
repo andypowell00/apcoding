@@ -46,8 +46,8 @@ namespace apapi.Controllers
                 temp_max = jsresp.main["temp_max"],
                 temp_min = jsresp.main["temp_min"],
                 humidity = jsresp.main["humidity"],
-                description = jsresp.weather["description"],
-                status = jsresp.weather["main"]
+                description = jsresp.weather[0].description,
+                status = jsresp.weather[0].main
             };
             return JsonConvert.SerializeObject(citycurrent);
         }
