@@ -11,5 +11,7 @@ namespace apapi
         public string Database { get; set; }
         public string TMBaseUrl { get; set; }
         public string TMApiKey { get; set; }
+        public string OWMApiKey { get; set; }
+        public string OWMBaseUrl { get; set; }
     }
 }

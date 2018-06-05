@@ -48,6 +48,8 @@ namespace apapi
                 options.Database = Configuration.GetSection("MongoConnection:Database").Value;
                 options.TMApiKey = Configuration.GetSection("TMAPI:ApiKey").Value;
                 options.TMBaseUrl= Configuration.GetSection("TMAPI:BaseUrl").Value;
+                options.OWMApiKey = Configuration.GetSection("OWMAPI:ApiKey").Value;
+                options.OWMBaseUrl= Configuration.GetSection("OWMAPI:BaseUrl").Value;
             });
             services.AddTransient<ITodoRepository, TodoRepository>();
         }
