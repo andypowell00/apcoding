@@ -9,7 +9,7 @@ using apapi.Abstract;
 
 namespace apapi.Code
 {
-    public class DbContext : ITodoContext
+    public class DbContext : ICollContext
     {
         private readonly IMongoDatabase _database = null;
 
@@ -26,7 +26,14 @@ namespace apapi.Code
         {
             get
             {
-                return _database.GetCollection<Todo>("todo");
+                return _database.GetCollection<Todo>("Todo");
+            }
+        }
+        public IMongoCollection<Quote> Quotes
+        {
+            get
+            {
+                return _database.GetCollection<Quote>("Quotes");
             }
         }
     }

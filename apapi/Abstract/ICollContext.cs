@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace apapi.Abstract
 {
-    public class ITodoContext
+    public class ICollContext
     {
         IMongoCollection<Todo> Todos { get; }
+        IMongoCollection<Quote> Quotes { get; }
     }
 }
