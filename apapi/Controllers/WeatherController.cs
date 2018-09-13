@@ -34,7 +34,7 @@ namespace apapi.Controllers
         public string Get(int id)
         {
             WebClient client = new WebClient ();
-            string reply = client.DownloadString(owmbaseurl + "weather?id=" + id + "&units=imperial&appid=" + owmapikey);
+            string reply = client.DownloadString(owmbaseurl + "/weather?id=" + id + "&units=imperial&appid=" + owmapikey);
             dynamic jsresp = JsonConvert.DeserializeObject(reply);
             Weather citycurrent = new Weather(){
                 lat = jsresp.coord["lat"],

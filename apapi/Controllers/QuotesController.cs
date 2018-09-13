@@ -6,6 +6,7 @@ using apapi.Abstract;
 using apapi.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.Http;
+using HtmlAgilityPack;
 
 namespace apapi.Controllers
 {
@@ -22,12 +23,13 @@ namespace apapi.Controllers
 
         //[NoCache]
         [HttpGet]
-        public async Task<String> Get()
+        public async Task<IEnumerable<Quote>> Get()
         {
-            //return await _QuoteRepository.GetAllQuotes();
-            HttpClient client = new HttpClient();
-            var response = await client.GetAsync("http://www.nzherald.co.nz/");
-            return await response.Content.ReadAsStringAsync();
+            //make this re usable, take out hard coding and give params,  url, 2 xpaths for quote, source, and auth (or episode if tv)
+            return await _QuoteRepository.GetAllQuotes();
+            //string url, string quotexpath,string src
+            //
+           
            
         }
 
