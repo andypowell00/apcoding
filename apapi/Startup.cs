@@ -37,7 +37,7 @@ namespace apapi
         services.AddCors(options =>
         {
             options.AddPolicy("AllowSpecificOrigin",
-                builder => builder.WithOrigins("http://localhost:58619").AllowAnyHeader()
+                builder => builder.WithOrigins("http://localhost:58619","http://localhost:5000").AllowAnyHeader()
                 .AllowAnyMethod());
         });
 

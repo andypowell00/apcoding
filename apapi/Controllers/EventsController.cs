@@ -7,6 +7,7 @@ using System.Net;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using apapi.Models;
+using Microsoft.AspNetCore.Cors;
 
 namespace apapi.Controllers
 {

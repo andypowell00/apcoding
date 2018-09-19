@@ -12,10 +12,10 @@ export class Event extends React.Component<RouteComponentProps<{}>, EventState> 
         super();
         this.state = { events: [], loading: true };
 
-        fetch('http://localhost:5000/api/events/keyword=mean%20girls')
+        fetch('http://localhost:63271/api/events/keyword=chicago')
             .then(response => response.json() as Promise<Events[]>)
             .then(data => {
-                //console.log('data obj = ' + data);
+                console.log('data obj = ' + data);
                 this.setState({ events: data, loading: false });
             });
     }
