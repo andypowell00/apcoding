@@ -40,9 +40,9 @@ namespace apapi.Code
         {
             try
             {
-                ObjectId internalId = GetInternalId(id);
+                //ObjectId internalId = GetInternalId(id);
                 return await _context.Todos
-                                .Find(Todo =>  Todo.InternalId == internalId)
+                                .Find(Todo =>  Todo.InternalId == id)
                                 .FirstOrDefaultAsync();
             }
             catch (Exception ex)
@@ -77,10 +77,11 @@ namespace apapi.Code
         public async Task<bool> RemoveTodo(string id)
         {
             try
-            {
-                DeleteResult actionResult
-                    = await _context.Todos.DeleteOneAsync(
-                        Builders<Todo>.Filter.Eq("_id", id));
+            { 
+                ObjectId internalId = GetInternalId(id);
+                var filter = Builders<Todo>.Filter.Eq("_id", internalId);
+                 DeleteResult actionResult
+                    = await _context.Todos.DeleteOneAsync(filter);
 
                 return actionResult.IsAcknowledged
                     && actionResult.DeletedCount > 0;

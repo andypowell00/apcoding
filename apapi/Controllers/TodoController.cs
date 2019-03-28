@@ -42,7 +42,8 @@ namespace apapi.Controllers
             {
                 title = newTodo.title,
                 complete = newTodo.complete,
-                description = newTodo.description
+                description = newTodo.description,
+                createDate = newTodo.createDate
             });
         }
 

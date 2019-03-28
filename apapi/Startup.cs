@@ -34,10 +34,11 @@ namespace apapi
         {
             options.Filters.Add(new CorsAuthorizationFilterFactory("AllowSpecificOrigin"));
         });
+    
         services.AddCors(options =>
         {
             options.AddPolicy("AllowSpecificOrigin",
-                builder => builder.WithOrigins("http://localhost:58619","http://localhost:5000").AllowAnyHeader()
+                builder => builder.WithOrigins("http://localhost:58619","http://localhost:3000").AllowAnyHeader()
                 .AllowAnyMethod());
         });
 

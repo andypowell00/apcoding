@@ -21,9 +21,8 @@ export class Event extends React.Component<RouteComponentProps<{}>, EventState> 
     }
 
     public render() {
-        let contents = this.state.loading
-            ? <p><em>Loading...</em></p>
-            : Event.renderEventsTable(this.state.events);
+        let contents = 
+             Event.renderEventsTable(this.state.events);
 
         return <div>
             <h1>Events</h1>
